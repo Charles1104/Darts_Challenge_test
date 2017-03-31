@@ -3,6 +3,7 @@
 module.exports = (arr) => {
 
   var sum = 0;
+  var count = 0;
 
   if (arr.length === 0){
       return -1;
@@ -17,7 +18,6 @@ module.exports = (arr) => {
     if (typeof(arr[i]) !== "number"){
       throw "Pass numbers only !!!";
     }
-
     else if (arr[i]>10 || arr[i] < 1){
       sum +=0;
     }
@@ -26,10 +26,16 @@ module.exports = (arr) => {
     }
     else if (arr[i]<5){
       sum +=10;
+      count += 1;
     }
   }
 
+  if (arr.length === count){
+    return sum + 100;
+  }
+  else{
   return sum;
+  }
 
 };
 

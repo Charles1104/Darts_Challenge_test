@@ -14,8 +14,14 @@ describe('throw function', () => {
     expect(darts([1, 5, 11])).to.be.equal(15);
     expect(darts([15, 20, 30])).to.be.equal(0);
     expect(darts([6, 8, 12, 20])).to.be.equal(10);
-    expect(darts([1, 2, 1, 4, 4, 2])).to.be.equal(60);
+    expect(darts([1, 2, 1, 4, 4, 2])).to.be.equal(160);
     expect(darts([1,7,9,14,5])).to.be.equal(25);
+    expect(darts([2,3,3])).to.be.equal(130);
+  });
+
+  it('should add a bonus of 100 points in case all scores are below 5', () => {
+    expect(darts([1, 2, 1, 4, 4, 2])).to.be.equal(160);
+    expect(darts([2,3,3])).to.be.equal(130);
   });
 
   it('should be an array of length 1 or more', () => {
